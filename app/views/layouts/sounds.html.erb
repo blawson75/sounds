@@ -35,15 +35,53 @@
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
     <%= javascript_include_tag "application" %>
+   
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.1/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.1/css/jquery.dataTables.css">
+    
   </head>
   <body>
 
-  
-          <%= yield %>
+    <div class="navbar navbar-fluid-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Brian's Sound Manager</a>
+          <div class="container-fluid nav-collapse">
+            <ul class="nav">
+              <li><%= link_to  glyph(:home) + " Home", "/sounds" %>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
 
-      <footer style="text-align:center;">
+    <div class="container-fluid content">
+        <div >
+          <%= bootstrap_flash %>
+          <%= yield %>
+        </div>
+      </div><!--/row-->
+
+      <footer>
         <p>&copy; Brian Lawson 2014</p>
       </footer>
 
+    </div> <!-- /container -->
+
   </body>
 </html>
+<script>
+  $(document).ready(function() {
+    $('#sounds_tbl').dataTable(
+      {
+        "bSort": true
+      }
+    );
+} );
+</script>

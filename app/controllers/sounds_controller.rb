@@ -1,4 +1,5 @@
 class SoundsController < ApplicationController
+  layout "sounds"
   before_action :set_sound, only: [:show, :edit, :update, :destroy]
 
   # GET /sounds

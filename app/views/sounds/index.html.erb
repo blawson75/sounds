@@ -1,6 +1,8 @@
 <h1>Listing sounds</h1>
-
-<table>
+<% if @sounds.size == 0 %>
+<h4>No Results Found</h4>
+<% else %>
+<table id="sounds_tbl">
   <thead>
     <tr>
       <th>Name</th>
@@ -8,7 +10,6 @@
       <th>Minutes</th>
       <th>Seconds</th>
       <th>Size</th>
-      <th>Size units</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,16 +21,26 @@
         <td><%= sound.format %></td>
         <td><%= sound.minutes %></td>
         <td><%= sound.seconds %></td>
-        <td><%= sound.size %></td>
-        <td><%= sound.size_units %></td>
-        <td><%= link_to 'Show', sound %></td>
-        <td><%= link_to 'Edit', edit_sound_path(sound) %></td>
-        <td><%= link_to 'Destroy', sound, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= sound.size.to_s() + " " + sound.size_units %></td>
+        <td><%= link_to sound do %> 
+            <i class="icon-zoom-in"></i> View
+          <% end %>
+        </td>
+        <td><%= link_to edit_sound_path(sound) do%>
+          <i class="icon-pencil"></i> Edit
+          <% end %>
+        </td>
+        <td><%= link_to sound, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="icon-remove"></i> Delete
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<% end %>
 <br>
 
-<%= link_to 'New Sound', new_sound_path %>
+<%= button_to new_sound_path, {:method=>'get', :class=>"btn btn-primary"} do %>
+<i class="icon-plus"></i> New Sound
+<% end %>

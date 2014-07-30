@@ -2,5 +2,13 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @sound %> |
-<%= link_to 'Back', sounds_path %>
+<div class="sound_btn">
+<%= button_to @sound, {:method=>'get', :class=>"btn btn-primary"} do %>
+<i class="icon-zoom-in"></i> View
+<% end %>
+</div>
+<div class="sound_btn">
+<%= button_to sounds_path, {:method=>'get', :class=>"btn btn-primary"} do %>
+<i class="icon-arrow-left"></i> Back
+<% end %>
+</div>

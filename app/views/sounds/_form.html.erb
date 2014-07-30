@@ -12,28 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name %>&nbsp;
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :format %><br>
-    <%= f.text_field :format %>
+    <%= f.label :format %>&nbsp;
+    <%= f.select :format,options_for_select(["CD", "Cassette", "MP3", "8-Track"]) %>
   </div>
   <div class="field">
-    <%= f.label :minutes %><br>
+    <%= f.label :minutes %>&nbsp;
     <%= f.number_field :minutes %>
   </div>
   <div class="field">
-    <%= f.label :seconds %><br>
+    <%= f.label :seconds %>&nbsp;
     <%= f.number_field :seconds %>
   </div>
   <div class="field">
-    <%= f.label :size %><br>
+    <%= f.label :size %>&nbsp;
     <%= f.text_field :size %>
   </div>
   <div class="field">
-    <%= f.label :size_units %><br>
-    <%= f.text_field :size_units %>
+    <%= f.label :size_units %>&nbsp;
+    <%= f.select :size_units, options_for_select(["Bytes", "KB", "MB", "GB"]) %>
   </div>
   <div class="actions">
     <%= f.submit %>

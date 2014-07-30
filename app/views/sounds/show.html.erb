@@ -30,5 +30,13 @@
   <%= @sound.size_units %>
 </p>
 
-<%= link_to 'Edit', edit_sound_path(@sound) %> |
-<%= link_to 'Back', sounds_path %>
+<div class="sound_btn">
+<%= button_to edit_sound_path(@sound), {:method=>'get', :class=>"btn btn-primary"} do %>
+<i class="icon-pencil"></i> Edit
+<% end %>
+</div>
+<div class="sound_btn">
+<%= button_to sounds_path, {:method=>'get', :class=>"btn btn-primary"} do %>
+<i class="icon-arrow-left"></i> Back
+<% end %>
+</div>

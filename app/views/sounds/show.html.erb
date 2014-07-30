@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sound.name %>
+</p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @sound.format %>
+</p>
+
+<p>
+  <strong>Minutes:</strong>
+  <%= @sound.minutes %>
+</p>
+
+<p>
+  <strong>Seconds:</strong>
+  <%= @sound.seconds %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @sound.size %>
+</p>
+
+<p>
+  <strong>Size units:</strong>
+  <%= @sound.size_units %>
+</p>
+
+<%= link_to 'Edit', edit_sound_path(@sound) %> |
+<%= link_to 'Back', sounds_path %>

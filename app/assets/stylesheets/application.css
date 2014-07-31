@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+/*
+table.dataTable tr.odd
+{
+  background-color:#66ccff;
+}
+table.dataTable tr.even
+{
+  background-color:#66ccff;
+}
+*/

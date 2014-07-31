@@ -24,3 +24,32 @@ th, td
 {
   text-align:center;
 }
+
+table.dataTable tr:nth-child(even)
+{
+  background-color:#3366ff;
+  color:#ccccff;
+}
+
+table.dataTable tr:nth-child(even) a
+{
+  text-decoration:none;
+  color:#ccccff;
+}
+table.dataTable tr:nth-child(even) a:hover
+{
+  text-decoration:none;
+  color:#ffffff;
+  background-color:transparent;
+}
+
+table.dataTable tr:nth-child(odd) a
+{
+  text-decoration:none;
+}
+table.dataTable tr:nth-child(odd) a:hover
+{
+  color:#000;
+  text-decoration:none;
+  background-color:transparent;
+}
